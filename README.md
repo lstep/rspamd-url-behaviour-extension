@@ -1,0 +1,1 @@
+# rspamd-url-behaviour-extension
