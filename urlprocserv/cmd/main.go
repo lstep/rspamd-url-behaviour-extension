@@ -1,6 +1,11 @@
 package main
 
-import "flag"
+import (
+	"flag"
+
+	"github.com/lstep/rspamd-url-behaviour-extension/urlprocserv/httpmanager"
+	"github.com/lstep/rspamd-url-behaviour-extension/urlprocserv/internal/urlmanager"
+)
 
 var (
 	listenURL *string
