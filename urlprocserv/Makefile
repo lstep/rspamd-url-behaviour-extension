@@ -2,6 +2,8 @@ BINARY_NAME := httpserver
 MAIN_PACKAGE_PATH := ./cmd
 
 
+all: audit build
+
 .PHONY: help
 help:
 	@echo 'Usage:'
@@ -57,6 +59,3 @@ push: tidy audit no-dirty
 production/deploy: confirm tidy audit no-dirty
 	GOOS=linux GOARCH=amd64 go build -ldflags='-s' -o=dist/linux_amd64/${BINARY_NAME} ${MAIN_PACKAGE_PATH}
 	upx -5 dist/linux_amd64/${BINARY_NAME}
-
-all:
-	build
